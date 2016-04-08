@@ -1,0 +1,15 @@
+
+<suite name="Selenium TestNG Suite" parallel="tests"
+    thread-count="5">
+
+    <test name="Selenium TestNG - 1">      
+    	<parameter name="browser" value="Internet Explorer" />
+        <parameter name="port" value="5557" />
+        <parameter name="machine" value="172.25.30.99" />
+        <classes>
+            <class name="SeleniumGridTest" />            
+        </classes>
+    </test>
+
+</suite>
+
