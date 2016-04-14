@@ -12,7 +12,7 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 
 public class CrossBrowserTest {
 	protected static WebDriver wd;
-	String appUrl="http://172.25.30.99/myshop/";
+	String appUrl="http://172.25.30.xx/myshop/";
 	 
 	@BeforeClass
     public static void setup()  
@@ -49,10 +49,10 @@ public class CrossBrowserTest {
         	wd.findElement(By.className("ico-login")).click(); 	 			
  		    wd.findElement(By.id("Email")); 	
  		    wd.findElement(By.id("Email")).clear(); 	
- 		    wd.findElement(By.id("Email")).sendKeys("navinchandrac@cybage.com");
+ 		    wd.findElement(By.id("Email")).sendKeys("");
  	        wd.findElement(By.id("Password")); 	
  	        wd.findElement(By.id("Password")).clear(); 		
- 	        wd.findElement(By.id("Password")).sendKeys("cybage@123");
+ 	        wd.findElement(By.id("Password")).sendKeys("");
  		    wd.findElement(By.xpath("html/body/div[4]/div[1]/div[4]/div[2]/div/div[2]/div[1]/div[2]/div[2]/form/div[5]/input")); 		   			
  		    wd.findElement(By.xpath("html/body/div[4]/div[1]/div[4]/div[2]/div/div[2]/div[1]/div[2]/div[2]/form/div[5]/input")).click(); 		 		
  		    System.out.println("Test script executed successfully."); 		  
