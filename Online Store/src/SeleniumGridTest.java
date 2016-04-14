@@ -16,7 +16,7 @@ import org.openqa.selenium.remote.*;
 
 public class SeleniumGridTest {
 	protected static WebDriver wd;
-	String appUrl="http://172.25.30.99/myshop/";
+	String appUrl="http://172.25.30.xx/myshop/";
 	 
 	@Parameters({"browser","port", "machine"})
 	@BeforeClass
@@ -58,10 +58,10 @@ public class SeleniumGridTest {
         	wd.findElement(By.className("ico-login")).click(); 	 			
  		    wd.findElement(By.id("Email")); 	
  		    wd.findElement(By.id("Email")).clear(); 	
- 		    wd.findElement(By.id("Email")).sendKeys("navinchandrac@cybage.com");
+ 		    wd.findElement(By.id("Email")).sendKeys("");
  	        wd.findElement(By.id("Password")); 	
  	        wd.findElement(By.id("Password")).clear(); 		
- 	        wd.findElement(By.id("Password")).sendKeys("cybage@123");
+ 	        wd.findElement(By.id("Password")).sendKeys("");
  		    wd.findElement(By.xpath("html/body/div[4]/div[1]/div[4]/div[2]/div/div[2]/div[1]/div[2]/div[2]/form/div[5]/input")); 		   			
  		    wd.findElement(By.xpath("html/body/div[4]/div[1]/div[4]/div[2]/div/div[2]/div[1]/div[2]/div[2]/form/div[5]/input")).click(); 		 		
  		    System.out.println("Test script executed successfully."); 		 
