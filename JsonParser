@@ -1,0 +1,49 @@
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.net.URLConnection;
+
+import org.apache.commons.io.IOUtils;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+
+public class JsonParser {
+	
+	public static void main(String[] s) throws JSONException, IOException
+	{
+		
+	String jsonData = JsonParser.myhttp();
+	
+	if(!jsonData.startsWith("{"))
+			{
+		int beginIndex = jsonData.indexOf('{');
+				jsonData = jsonData.substring(beginIndex, jsonData.length());
+			}		
+	JSONObject json = new JSONObject(jsonData);
+    JSONObject j = json.getJSONArray("results").getJSONObject(0);
+    
+    int length = json.getJSONArray("results").length();
+    System.out.println("Console is: " + j);
+    JSONArray scu = j.getJSONArray("screenshotUrls");
+    System.out.println("Console is: " + scu);
+    String a = scu.getString(0);
+    System.out.println("Console is: " + a);    
+    String sr = j.getString("description");    
+    System.out.println("Console is: " + sr);
+
+	}
+	public static String myhttp() throws IOException
+    {
+      URL url = new URL("https://itunes.apple.com/search?term=social&country=us&entity=iPadSoftware&limit=10");
+      URLConnection con = url.openConnection();
+      InputStream in = con.getInputStream();
+      String encoding = con.getContentEncoding();
+      encoding = encoding == null ? "UTF-8" : encoding;
+      String body = IOUtils.toString(in, encoding);
+      //System.out.println(body);
+      return body;
+    }
+
+}
